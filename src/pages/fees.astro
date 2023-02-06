@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Container from "../components/container.astro";
+import Sectionhead from "../components/sectionhead.astro";
+import Buttonlist from "../components/buttonlist.astro";
+
+const rates = [{
+    name: "Shorter individual session",
+    duration: '30 minutes',
+    place: 'Online',
+    price: '50',
+    description: 'A short session to help you get started with your goals.'
+},
+{
+    name: "Individual session",
+    duration: '60 minutes',
+    place: 'Online',
+    price: '80',
+    description: 'A longer session to help you get started with your goals.'
+},
+{
+    name: "EMDR introductory session",
+    duration: '120 minutes',
+    price: '120',
+    place: 'In person',
+    description: 'A longer session to help you get started with your goals.'
+}
+]
+
+const details = [{
+    title: "Payment",
+    description: "Payment is made via bank transfer or cash on the day of the session. I am unable to accept card payments at this time.",
+    more: "I am unable to accept card payments at this time.",
+},
+{
+    title: "Cancellation",
+    description: "If you need to cancel a session, please give me at least 24 hours notice. If you cancel with less than 24 hours notice, you will be charged for the session.",
+    more: "If you cancel with less than 24 hours notice, you will be charged for the session.",
+},
+{
+    title: "Confidentiality",
+    description: "All information discussed in sessions is confidential and will not be shared with anyone without your consent.",
+    more: "All information discussed in sessions is confidential and will not be shared with anyone without your consent.",
+},
+{
+    title: "Contact",
+    description: "If you have any questions or would like to book a session, please contact me.",
+    more: "If you have any questions or would like to book a session, please contact me.",
+}]
+---
+
+<Layout title="Session pricing">
+    <Container>
+        <Sectionhead title="Session pricing">
+            <Fragment slot="title">Session fees</Fragment>
+            <Fragment slot="desc">I offer a number of sessions both in-person and online.</Fragment>
+        </Sectionhead>
+
+        <div class="block md:flex  md:flex-wrap md:gap-8 md:items-start justify-center mt-12">
+            <div class="space-y-4 p-4">
+                <h2 class="text-xl">Rates </h2>
+                {rates.map((session, idx) => {
+                    return (
+                        <div class="space-y-2 pb-4">
+                            <div class="flex gap-4 items-center">
+                                <h2 class="text-lg font-semibold">{session.name}</h2>
+                                <p class="text-slate-600">{session.place}</p>
+                            </div>
+                            <p>£{session.price} / {session.duration}</p>
+                            <p class="max-w-md">{session.description}</p>
+                        </div>
+                    )
+                })}
+            </div>
+            <div class="space-y-4 p-4">
+                <h2 class="text-xl">Details</h2>
+                {details.map((info) => {
+                    return (
+                        <div class="space-y-2 pb-4 max-w-lg">
+                            <div class="flex gap-4 items-center">
+                                <h2 class="text-lg font-semibold">{info.title}</h2>
+                                </div>
+                                <p class="max-w-md">{info.description}</p>
+                                <p class="max-w-md">{info.more}</p>
+                                </div>
+                                )
+                            })}
+            </div>
+            <Buttonlist />
+        </div>
+
+    </Container>
+</Layout>

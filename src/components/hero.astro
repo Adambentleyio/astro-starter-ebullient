@@ -1,0 +1,39 @@
+---
+import { Image } from "@astrojs/image/components";
+import heroImage from "assets/hero.png";
+// import Link from "@components/ui/link.astro";
+import Buttonlist from "./buttonlist.astro";
+
+---
+
+<main class="relative grid lg:grid-cols-2 place-items-center min-h-screen pb-20 md:min-h-full md:py-64">
+  <div class="py-6 sm:block sm:absolute sm:right-2 sm:opacity-20 md:opacity-100 -z-10 md:order-1 hidden md:relative md:block ">
+    <Image
+      src={heroImage}
+      alt="Astronaut on moon"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div>
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-fuchsia-600 z-90">
+      Therapy Coaching & Professional services
+    </h1>
+    <p class="text-xs bg-fuchsia-200 rounded-sm inline-block p-1 font-semibold tracking-wide uppercase mt-4 text-black max-w-xl outline-none">
+      Ebullient is a starter template by Grayscale</p>
+    <div class="ml-1">
+        <p class="text-lg mt-2 max-w-xl pt-4 pb-2g">A website starter for solopreneurs, leaders, therapists and coaches.
+        <!-- <p class="text-sm mt-4 tracking-wide">
+          Built on blazingly fast and modern architecture with a score of 90+ Google Lighthouse and great out-of-the-box SEO.
+        </p> -->
+        <ul class="flex flex-col space-y-2 text-sm my-4 marker:text-fuchsia-500 list-disc list-inside">
+          <li>Blazingly fast websites</li>
+          <li>90+ Google Lighthouse scores</li>
+          <li>Great out-of-the-box SEO</li>
+        </ul>
+      </p>
+    </div>
+
+    <Buttonlist />
+  </div>
+</main>

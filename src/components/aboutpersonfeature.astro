@@ -1,0 +1,33 @@
+---
+
+const {team} = Astro.props
+import Link from "./ui/link.astro"
+import { Image } from "@astrojs/image/components"
+---
+
+<div class="bg-slate-50 max-w-4xl mx-auto m-12 p-4 md:p-12">
+    <div class="flex md:gap-8 flex-col space-y-8 md:space-y-0 md:flex-row md:items-center">
+      <div class="aspect-square">
+        <Image
+                {...team[0].avatar}
+                format="avif"
+                alt="Team"
+                class="object-cover md:outline-offset-4 md:outline-purple-900 md:outline-dotted rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+              />
+      </div>
+      <div class="mt-4 max-w-md mx-auto space-y-4">
+        <h2 class="text-5xl font-bold lg:tracking-tight text-transparent bg-clip-text bg-gradient-to-tl from-slate-500 to-gray-900">
+          I believe in rainbows and a better tomorrow.
+        </h2>
+        <h2 class="text-xl text-gray-800">{team[0].name}</h2>
+        <h3 class="text-sm text-slate-500"> {team[0].title}</h3>
+        <div class="pt-4">
+          <Link href="#" style="outline">More</Link>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="pb-8 px-12 max-w-[50%] space-y-4 slate-900 text-lg">
+      <p>Therapy has many benefits for promoting positive psychology, including increasing happiness and well-being, reducing stress and anxiety, and improving relationships. By working with a therapist, individuals can explore their thoughts, feelings, and behaviors to gain a deeper understanding of themselves and their experiences. This can lead to greater self-awareness and insight, which can enhance personal growth and overall life satisfaction.</p>
+    </div>-->
+  </div>
+  <hr class="h-px my-8 bg-gray-200 border-0 z-10">

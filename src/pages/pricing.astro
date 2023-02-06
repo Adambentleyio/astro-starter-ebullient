@@ -1,0 +1,77 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Pricing from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Personal",
+    price: "£10",
+    popular: false,
+    features: [
+      "Lifetime free",
+      "Monthly YouTube livestreams",
+      "Access to community forum",
+      "Resources",
+      "Discounts on courses",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/",
+    },
+  },
+  {
+    name: "Enlightening",
+    price: {
+      monthly: "£49",
+      annual: "£500",
+      discount: "10%",
+      original: "£64",
+    },
+    popular: true,
+    features: [
+      "All Free Features",
+      "Weekly Q&A livestreams",
+      "Access to private community",
+      "Premium resources",
+      "Discounts on courses",
+    ],
+    button: {
+      text: "Get Started",
+      link: "#",
+    },
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    popular: false,
+    features: [
+      "All Pro Features",
+      "1-2-1 support",
+      "Customized training",
+      "Customized resources",
+      "Free access to all workshops",
+    ],
+    button: {
+      text: "Contact us",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="desc"
+        >Pricing page for cohort-based courses and digital content.</Fragment
+      >
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <Pricing plan={item} />)}
+    </div>
+  </Container>
+</Layout>
