@@ -2,26 +2,6 @@
 
 Astroship is a starter template for startups, marketing websites & landing pages. Built with Astro, TailwindCSS & Alpine.js.
 
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
-
-## Live Demo
-
-### [https://astroship.web3templates.com/](https://astroship.web3templates.com/)
-
-## Deploy on Vercel
-
-Click the below link to deploy this template on Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/surjithctly/astroship)
-
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-## Installation
-
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
-
-Alternatively, you can clone the project directly from this repo to your local system.
-
 ### 1. Clone the repo
 
 ```bash
