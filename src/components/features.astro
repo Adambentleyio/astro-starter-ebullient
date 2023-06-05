@@ -42,27 +42,29 @@ const features = [
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight max-w-5xl">
-    Everything you needed to <span class="font-extrabold">move forward</span>
-  </h2>
-  <p class="text-lg mt-4 text-slate-600 max-w-xl">
-    Working with a professional comes with benefits. It takes the best of what there is to know, and mixes it with what you want to achieve.
-  </p>
-</div>
+<div class="py-20">
+  <div>
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight max-w-5xl mb-8">
+      Everything you needed to <span class="font-extrabold">move forward</span>
+    </h2>
+    <p class="text-lg mt-4 text-slate-600 max-w-2xl">
+      Working with a professional comes with benefits. It takes the best of what there is to know, and mixes it with what you want to achieve.
+    </p>
+  </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item, idx) => (
-      <div class="flex gap-4 items-start">
-        <div class={idx % 2 === 0 ? "bg-black mt-1 rounded-full  p-2 w-12 h-12 shrink-0" : "bg-slate-700 mt-1 rounded-full  p-2 w-12 h-12 shrink-0"}>
-          <Icon class="text-white" name={item.icon} />
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+    {
+      features.map((item, idx) => (
+        <div class="flex gap-4 items-start">
+          <div class={idx % 2 === 0 ? "bg-fuchsia-700 mt-1 rounded-full  p-2 w-12 h-12 shrink-0" : "bg-slate-700 mt-1 rounded-full  p-2 w-12 h-12 shrink-0"}>
+            <Icon class="text-white" name={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl">{item.title}</h3>{" "}
+            <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-xl">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </div>

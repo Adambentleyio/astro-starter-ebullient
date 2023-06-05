@@ -1,0 +1,39 @@
+---
+import { Image } from "@astrojs/image/components";
+import heroImage from "assets/midjourney-adam-topless.png";
+
+
+---
+<div class="py-20">
+  <div class="flex justify-between">
+    <div class="max-w-3xl">
+        <h2 class="text-2xl lg:text-3xl font-bold lg:tracking-tight max-w-5xl mb-8">The strength to change oneself is the strongest act of all.</h2>
+        <p class="text-lg mt-4 text-slate-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eaque quam, repudiandae quidem dolores magni aut iusto at. Minima id debitis consequuntur quisquam eveniet, voluptates maxime dicta libero quaerat ducimus! Dolores tenetur nemo illum excepturi. Officia debitis enim soluta, exercitationem tempore accusantium, aut quidem atque nemo itaque dignissimos consequuntur voluptatibus.</p>
+        <p class="text-lg mt-4 text-slate-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eaque quam, repudiandae quidem dolores magni aut iusto at. Exercitationem tempore accusantium, aut quidem atque nemo itaque dignissimos consequuntur voluptatibus.</p>
+    </div>
+    <div class="hidden lg:order-1 lg:block h-96 rounded-lg overflow-hidden">
+        <Image
+          src={heroImage}
+          alt="Astronaut on moon"
+          loading="eager"
+          class="object-cover h-full w-full"
+
+        />
+      </div>
+</div>
+
+<div class="text-slate-600">
+  <p class="text-lg mt-4">Do any of the following resonate with you?</p>
+  <p class="text-lg">Maybe you…</p>
+  <ul>
+    <li class="text-lg mt-4">Feel overwhelmed, burnt out, and like you can never measure up - no matter how much you do for everyone else in your life…OR…
+    </li>
+    <li class="text-lg">
+        Need support as you navigate the ever-present transitions and underlying anxiety of how COVID-19 has reshaped our world…OR…
+    </li>
+    <li class="text-lg">
+      Want to find more helpful ways to approach your relationships, manage anxiety and depression, or heal from trauma…
+    </li>
+  </ul>
+</div>
+</div>
