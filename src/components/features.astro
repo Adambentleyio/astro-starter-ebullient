@@ -13,7 +13,7 @@ const features = [
     title: "Increased productivity",
     description:
       "Coaching can provide individuals with strategies to improve their time management, organization, and overall productivity.",
-    icon: "bx:bxs-window-alt",
+    icon: "bx:bxs-user",
   },
   {
     title: "Make moves",
@@ -44,23 +44,23 @@ const features = [
 
 <div class="py-20">
   <div>
-    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight max-w-5xl mb-8">
-      Everything you needed to <span class="font-extrabold">move forward</span>
+    <h2 class="text-4xl lg:text-6xl font-bold lg:tracking-tight max-w-5xl mb-8">
+      Everything you need to <span class="font-extrabold text-fuchsia-600">move forward</span>
     </h2>
-    <p class="text-lg mt-4 text-slate-600 max-w-2xl">
-      Working with a professional comes with benefits. It takes the best of what there is to know, and mixes it with what you want to achieve.
+    <p class="text-lg mt-4 text-slate-600 max-w-3xl">
+      Working with a professional has its benefits. Here are some ways coaching can help you.
     </p>
   </div>
 
   <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
     {
       features.map((item, idx) => (
-        <div class="flex gap-4 items-start">
-          <div class={idx % 2 === 0 ? "bg-fuchsia-700 mt-1 rounded-full  p-2 w-12 h-12 shrink-0" : "bg-slate-700 mt-1 rounded-full  p-2 w-12 h-12 shrink-0"}>
+        <div class="flex flex-col lg:flex-row gap-4 lg:items-start">
+          <div class={idx % 2 === 0 ? "bg-fuchsia-600 mt-1 rounded-full  p-2 w-12 h-12 shrink-0" : "bg-black mt-1 rounded-full  p-2 w-12 h-12 shrink-0"}>
             <Icon class="text-white" name={item.icon} />
           </div>
           <div>
-            <h3 class="font-semibold text-xl">{item.title}</h3>{" "}
+            <h3 class="font-semibold text-2xl ">{item.title}</h3>{" "}
             <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
           </div>
         </div>
