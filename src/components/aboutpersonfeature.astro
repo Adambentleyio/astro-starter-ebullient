@@ -3,24 +3,29 @@
 const {team} = Astro.props
 import Link from "./ui/link.astro"
 import { Image } from "@astrojs/image/components"
+
+// set persaon to the nth object in an array or assign to the original object
+const person = Array.isArray(team) ? team[0] : team
 ---
 
 <div class="bg-slate-50 max-w-4xl mx-auto m-12 p-4 md:p-12">
     <div class="flex md:gap-8 flex-col space-y-8 md:space-y-0 md:flex-row md:items-center">
       <div class="aspect-square">
         <Image
-                {...team[0].avatar}
+                {...person.avatar}
                 format="avif"
                 alt="Team"
-                class="object-cover md:outline-offset-4 md:outline-purple-900 md:outline-dotted rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+                class="object-cover md:outline-offset-4 md:outline-teal-900 md:outline-dotted rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
               />
       </div>
       <div class="mt-4 max-w-md mx-auto space-y-4">
-        <h2 class="text-5xl font-bold lg:tracking-tight text-transparent bg-clip-text bg-gradient-to-tl from-slate-500 to-gray-900">
-          I believe in rainbows and a better tomorrow.
+        <h2 class="text-5xl mb-2 font-bold lg:tracking-tight text-transparent bg-clip-text bg-gradient-to-tl from-slate-500 to-gray-900">
+          Health is the ultimate wealth.
         </h2>
-        <h2 class="text-xl text-gray-800">{team[0].name}</h2>
-        <h3 class="text-sm text-slate-500"> {team[0].title}</h3>
+        <strong class="text-xl ">I will help you build a your net worth.</strong>
+        <h3 class="text-xl text-gray-800">{person.name}</h3>
+        <span class="text text-slate-500">{person.title}</span>
+        <span class="text text-slate-500">{person.test}</span>
         <div class="pt-4">
           <Link href="#" style="outline">More</Link>
         </div>
