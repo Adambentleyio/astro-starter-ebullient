@@ -19,13 +19,13 @@ const menuitems = [
     title: "Packages",
     path: "/pricing",
   },
-  {
-    title: "Pricing",
-    path: "/fees",
-  },
+  // {
+  //   title: "Pricing",
+  //   path: "/fees",
+  // },
   {
     title: "About",
-    path: "/about",
+    path: "#",
   },
   // {
   //   title: "Blog",
@@ -94,7 +94,7 @@ const menuitems = [
                 <li>
                   <a
                     href={item.path}
-                    class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                    class:list={`flex lg:px-3 py-2 text-gray-600 hover:text-gray-900`}>
                     {item.title}
                   </a>
                 </li>

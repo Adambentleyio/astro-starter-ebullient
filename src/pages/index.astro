@@ -9,19 +9,20 @@ import Content from "@components/content.astro";
 import Layout from "@layouts/Layout.astro";
 import Aboutpersonfeature from "@components/aboutpersonfeature.astro";
 import heroAlt from "@assets/hero-alt.png"
+import heroImage from "assets/hero-yoga.jpg";
+
 
 
 const personProfile = "https://source.unsplash.com/ZHvM3XIOHoE";
 
 const person =
   {
-    name: "Adam Bentley",
-    title: "Head trainer",
+    name: "",
+    title: "",
     avatar: {
-      src: heroAlt,
-      aspectRatio: "9:12",
+      src: heroImage,
       width: 480,
-      fit: 'contain'
+      fit: 'cover',
       // height: 560,
     },
   }
