@@ -1,0 +1,128 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Features from "@components/features.astro";
+import Footer from "@components/footer.astro";
+import Hero from "@components/hero.astro";
+import Logos from "@components/logos.astro";
+import Content from "@components/content.astro";
+import Layout from "@layouts/Layout.astro";
+import Aboutpersonfeature from "@components/aboutpersonfeature.astro";
+import heroAlt from "@assets/hero-alt.png"
+import heroImage from "assets/hero-yoga.jpg";
+
+
+
+const personProfile = "https://source.unsplash.com/ZHvM3XIOHoE";
+
+const person =
+  {
+    name: "",
+    title: "",
+    avatar: {
+      src: heroImage,
+      width: 480,
+      fit: 'cover',
+      // height: 560,
+    },
+  }
+
+  const therapistsContent = {
+    hero: {
+        title: "Attachment therapy for healthier relationships",
+        hook: "We help you build a secure attachment style to improve your relationships and mental health.",
+        bulletList: [
+            "Learn to communicate your needs",
+            "Build trust and intimacy",
+            "Feel more secure in your relationships",
+        ],
+        image: {
+            src: heroImage,
+            alt: heroAlt,
+            width: 480,
+            height: 560,
+        },
+    },
+        features: {
+                title: "Talk therapy for healthier relationships",
+                hook: "We help you build a secure attachment style to improve your relationships and mental health.",
+                cards: [
+                    {
+                        title: "Improved leadership skills",
+                        description:
+                        "Executive coaching can help individuals develop their leadership skills and navigate complex business challenges.",
+                        icon: "bx:bxs-briefcase",
+                    },
+                    {
+                        title: "Increased productivity",
+                        description:
+                        "Coaching can provide individuals with strategies to improve their time management, organization, and overall productivity.",
+                        icon: "bx:bxs-user",
+                    },
+                    {
+                        title: "Make moves",
+                        description:
+                        "With executive coaching, you'll have the tools you need to navigate the job market and take your career to the next level.",
+                        icon: "bx:bxs-window-alt"
+                    },
+                    {
+                        title: "Boost your confidence",
+                        description:
+                        "Executive coaching can help you build your self-confidence and communicate more effectively in both personal and professional settings.",
+                        icon: "bx:bxs-window-alt"
+                    },
+                    {
+                        title: "Enhance your personal brand",
+                        description:
+                        "Through executive coaching, you can strengthen your personal brand and increase your self-assurance in the workplace.",
+                        icon: "bx:bxs-file-find",
+                    },
+                    {
+                        title: "Develop a positive mindset",
+                        description:
+                        "Executive coaching can help you adopt a positive mindset and increase your self-confidence, leading to greater success in your career and personal life.",
+                        icon: "bx:bxs-user",
+                    },
+                ]
+            },
+            about: {
+                title: "Break through limits; understand thyself",
+                subtitle: "I'm here to support your journey",
+                person:
+                    {
+                        name: "Jane John Doe",
+                        title: "Attachment Therapist",
+                        avatar: {
+                        src: heroImage,
+                        width: 480,
+                        fit: 'cover',
+                        // height: 560,
+                        },
+                    }
+                },
+                cta: {
+                    title: "Ready to get started?",
+                    subtitle: "We're here to help you reach your fitness goals. Currently taking clients from X location, providing 1-2-1s and group training classes. Get in touch today to schedule your first session.",
+                    button: {
+                    text: "Get started",
+                    url: "/contact",
+                    },
+                    style: "primary"
+                }
+    }
+
+---
+
+<Layout title="">
+  <Container>
+    <Hero props={therapistsContent.hero} />
+    <Features
+        title={therapistsContent.features.title}
+        hook={therapistsContent.features.hook}
+        cards={therapistsContent.features.cards}/>
+    <Content />
+    <Logos />
+    <Aboutpersonfeature team={person} props={therapistsContent.about} />
+    <Cta props={therapistsContent.cta} />
+  </Container>
+</Layout>

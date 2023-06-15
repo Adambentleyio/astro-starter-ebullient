@@ -1,11 +1,14 @@
 ---
 
+
 const {team} = Astro.props
 import Link from "./ui/link.astro"
 import { Image } from "@astrojs/image/components"
 
 // set persaon to the nth object in an array or assign to the original object
-const person = Array.isArray(team) ? team[0] : team
+// const person = Array.isArray(team) ? team[0] : team
+const { title, subtitle, person} = Astro.props.props
+console.log(title)
 ---
 
 <div class="bg-slate-50 max-w-4xl mx-auto m-12 p-4 md:p-12">
@@ -20,9 +23,9 @@ const person = Array.isArray(team) ? team[0] : team
       </div>
       <div class="mt-4 max-w-md mx-auto space-y-4">
         <h2 class="text-5xl mb-4 font-bold lg:tracking-tight">
-          Health is the ultimate wealth.
+         {title}
         </h2>
-        <strong class="text-xl">Transform Your Body and Boost Your Confidence with expert coaching and guidance.</strong>
+        <strong class="text-xl">{subtitle}</strong>
 
         <div class="flex items-center space-x-2">
           <h3 >{person.name}</h3>

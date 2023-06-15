@@ -1,19 +1,18 @@
 ---
 import { Image } from "@astrojs/image/components";
-// import heroImage from "assets/hero.png";
-import heroImage from "assets/hero-yoga.jpg";
 // import Link from "@components/ui/link.astro";
 import Buttonlist from "./buttonlist.astro";
 
-const {title = "Attachment therapy for developing healthy relationships"} = Astro.props
+
+const { title, hook, bulletList, image } = Astro.props.props;
 
 ---
 
 <div class="py-12 lg:py-0 lg:min-h-[90vh] grid md:grid-cols-2 place-items-center gap-20">
   <div class="hidden py-6 md:order-1 md:block ">
     <Image
-      src={heroImage}
-      alt="Astronaut on moon"
+      src={image.src}
+      alt={image.alt}
       loading="eager"
 
     />
@@ -25,17 +24,17 @@ const {title = "Attachment therapy for developing healthy relationships"} = Astr
     <p class="text-xs border-2  rounded-sm inline-block p-1 font-semibold tracking-wide uppercase mt-4 max-w-xl outline-none ">
       Ebullient is a starter template by Greyscale88</p>
     <div class="ml-1">
-        <p class="mt-2 max-w-xl pt-4 pb-2">A brochure style marketing site for leaders, therapists and coaches. Attract clients and students and get leads.
+        <p class="mt-2 max-w-xl pt-4 pb-2">{hook}</p>
         <!-- <p class="text-sm mt-4 tracking-wide">
           Built on blazingly fast and modern architecture with a score of 90+ Google Lighthouse and great out-of-the-box SEO.
         </p> -->
-        <ul class="flex flex-col  text-md mt-2 marker:text-fuchsia-500 list-disc list-outside">
-          <li>Blazingly fast websites</li>
-          <li>90+ Google Lighthouse scores</li>
-          <li>Best-in-class Search Engine Optimization</li>
+        <ul class="flex flex-col text-md mt-2 marker:text-slate-700-500 list-disc list-outside">
+          {bulletList.map((item) => (
+            <li>{item}</li>
+          ))}
         </ul>
-      </p>
+
+      <Buttonlist />
     </div>
-    <Buttonlist />
   </div>
 </div>
