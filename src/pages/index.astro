@@ -1,127 +1,33 @@
 ---
 import Container from "@components/container.astro";
-import Cta from "@components/cta.astro";
-import Features from "@components/features.astro";
-import Footer from "@components/footer.astro";
 import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
-import Content from "@components/content.astro";
 import Layout from "@layouts/Layout.astro";
-import Aboutpersonfeature from "@components/aboutpersonfeature.astro";
-import heroAlt from "@assets/hero-pt.jpg"
-import heroImage from "assets/hero-yoga.jpg";
+import heroGym from "@assets/hero-gym.png"
 
-const personProfile = "https://source.unsplash.com/ZHvM3XIOHoE";
 
-const person =
-  {
-    name: "",
-    title: "",
-    avatar: {
-      src: heroImage,
-      width: 480,
-      fit: 'cover',
-      // height: 560,
-    },
-  }
 
-  const TrainerContent = {
+  const TemplateContent = {
     hero: {
-        title: "Move your body, move your mind.",
-        hook: "Personal training is a great way to get started on your fitness journey. Whether you're looking to lose weight, build muscle, or just feel better about yourself, we can help you reach your goals.",
+        title: "A brand new website service for awesome folks.",
+        hook: "We're a small team of designers and developers who can help you build your next website.",
         bulletList: [
-            "Personalized workouts",
-            "Nutrition guidance",
-            "Accountability",
-            "Results",
+            "Personal Trainers",
+            "Therapists",
+            "Yoga Instructors",
+            "Exective Coaches",
         ],
         image: {
-            src: heroAlt,
-            alt: heroAlt,
+            src: heroGym,
+            alt: "hero gym",
             width: 480,
             height: 560,
         },
-    },
-    features: {
-      title: "What is personal training?",
-      hook: "Personal training is a great way to get started on your fitness journey. Whether you're looking to lose weight, build muscle, or just feel better about yourself, we can help you reach your goals.",
-      cards: [
-        {
-          title: "Learn the correct form",
-          description:
-            "Personal training is a great way to learn the correct form for exercises and avoid injury.",
-          icon: "bx:bxs-file-find",
-        },
-        {
-          title: "Effective workouts",
-          description:
-            "Personal training is a great way to get the most out of your workouts and reach your fitness goals.",
-          icon: "bx:bxs-user",
-        },
-        {
-          title: "Make moves",
-          description:
-            "Personal training is a great way to learn new exercises and make sure you're doing them correctly.",
-            icon: "bx:bxs-window-alt"
-        },
-        {
-          title: "Accountability",
-          description:
-            "Personal training is a great way to stay motivated and accountable for your fitness goals.",
-            icon: "bx:bxs-window-alt"
-        },
-        {
-          title: "Quickly get up to speed",
-          description:
-            "Personal training is a great way to quickly get up to speed on the latest fitness trends and techniques.",
-          icon: "bx:bxs-file-find",
-        },
-        {
-          title: "Develop a positive mindset",
-          description:
-            "Personal Training can help you adopt a positive mindset and increase your self-confidence.",
-          icon: "bx:bxs-user",
-        },
-      ]
-    },
-    about: {
-      title: "Healthy lasting change is possible.",
-      subtitle: "We're here to help you reach your fitness goals. Change is possible and I'm here to help you achieve it.",
-     person:
-          {
-            name: "John Doe",
-            title: "Head trainer",
-            avatar: {
-              src: heroAlt,
-              width: 400,
-              fit: 'cover',
-              // height: 560,
-            },
-          }
-      },
-      cta: {
-        title: "Ready to get started?",
-        subtitle: "We're here to help you reach your fitness goals. Currently taking clients from X location, providing 1-2-1s and group training classes. Get in touch today to schedule your first session.",
-        button: {
-          text: "Get started",
-          url: "/contact",
-        },
-        style: "secondary"
-  }
+    }
 }
 ---
 
 <Layout title="">
   <Container>
-    <Hero props={TrainerContent.hero} />
-    <Features
-        title={TrainerContent.features.title}
-        hook={TrainerContent.features.hook}
-        cards={TrainerContent.features.cards}
-         />
-    <Content />
-    <Logos />
-    <Aboutpersonfeature team={person} props={TrainerContent.about} />
-    <Cta props={TrainerContent.cta} />
+    <Hero props={TemplateContent.hero} />
   </Container>
 </Layout>
