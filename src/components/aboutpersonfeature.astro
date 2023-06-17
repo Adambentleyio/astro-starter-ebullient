@@ -10,6 +10,8 @@ import imagePlaceholder from "@assets/hero-pt.jpg"
 // const person = Array.isArray(team) ? team[0] : team
 const { title, subtitle, person} = Astro.props.props || {}
 
+console.log(person.avatar.src)
+
 const defaultValues = {
   title: "A catchy belief statement",
   subtitle: "Your subtitle goes here",
@@ -33,9 +35,9 @@ const finalPerson = person || defaultValues.person
 
 ---
 
-<div class="bg-slate-50  mx-auto m-12 p-4 md:p-12">
-    <div class="flex items-center md:gap-8 flex-col space-y-8 py-12 md:space-y-0 lg:flex-row lg:items-center">
-      <div class="group">
+<div class="bg-slate-50  my-20 p-4 md:p-12">
+    <div class="flex flex-col items-center md:gap-8  space-y-8 py-12 md:space-y-0 md:flex-row ">
+      <div class="group grow">
         <Image
                 {...finalPerson?.avatar || defaultValues.person.avatar}
                 format="avif"
@@ -43,18 +45,18 @@ const finalPerson = person || defaultValues.person
                 class="rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
               />
       </div>
-      <div class="mt-4 max-w-md mx-auto space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
+      <div class="mt-4 max-w-sm mx-auto space-y-4  lg:text-left flex flex-col lg:items-start">
         <h2 class="text-5xl mb-4 font-bold lg:tracking-tight">
          {finalTitle}
         </h2>
-        <strong class="text-xl">{finalSubtitle}</strong>
+        <h2>{finalSubtitle}</h2>
 
-        <div class="flex items-center space-x-2">
+        <div class="flex space-x-2">
           <h3 >{person?.name}</h3>
           <span class="text text-slate-500">{person?.title}</span>
           </div>
         <div class="pt-4">
-          <Link href="#" style="outline">Contact me now</Link>
+          <Link href="#" style="outline" class="font-semibold">Contact me now</Link>
         </div>
       </div>
     </div>

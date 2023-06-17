@@ -1,6 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import heroImage from "assets/hero-pt.jpg";
+import generatePress from "assets/generatepress-hero.png";
 
 
 ---
@@ -22,11 +23,10 @@ import heroImage from "assets/hero-pt.jpg";
     <div class="flex justify-center xl:w-1/3">
       <div class="hidden xl:block max-w-xs rounded-lg overflow-hidden">
           <Image
-            src={heroImage}
+            src={generatePress}
             alt="Astronaut on moon"
             loading="lazy"
             class="object-cover"
-
           />
         </div>
     </div>

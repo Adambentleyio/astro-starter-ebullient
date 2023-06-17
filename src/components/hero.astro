@@ -8,7 +8,7 @@ const { title, hook, bulletList, image } = Astro.props.props;
 
 ---
 
-<div class="py-12 lg:py-0 lg:min-h-[90vh] grid md:grid-cols-2 place-items-center gap-20">
+<div class="py-12 lg:py-0 lg:min-h-[960px] grid md:grid-cols-2 lg:place-items-center gap-20">
   <div class="hidden py-6 md:order-1 md:block ">
     <Image
       src={image.src}
@@ -17,8 +17,8 @@ const { title, hook, bulletList, image } = Astro.props.props;
 
     />
   </div>
-  <div class="mx-auto max-w-2xl">
-    <h1 class="text-4xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-black to-black">
+  <div class="max-w-2xl">
+    <h1 class="text-4xl sm:text-4xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-black to-black">
       {title}
     </h1>
     <p class="text-xs border-2  rounded-sm inline-block p-1 font-semibold tracking-wide uppercase mt-4 max-w-xl outline-none ">
@@ -28,7 +28,7 @@ const { title, hook, bulletList, image } = Astro.props.props;
         <!-- <p class="text-sm mt-4 tracking-wide">
           Built on blazingly fast and modern architecture with a score of 90+ Google Lighthouse and great out-of-the-box SEO.
         </p> -->
-        <ul class="flex flex-col text-md mt-2 marker:text-slate-700-500 list-disc list-outside">
+        <ul class="flex flex-col text-md mt-2 marker:text-slate-700-500 list-disc list-inside">
           {bulletList.map((item) => (
             <li>{item}</li>
           ))}
