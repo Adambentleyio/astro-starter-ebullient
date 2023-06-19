@@ -1,14 +1,17 @@
 ---
 import { Image } from "@astrojs/image/components";
-// import Link from "@components/ui/link.astro";
+import Link from "@components/ui/link.astro";
 import Buttonlist from "./buttonlist.astro";
 
 
-const { title, hook, bulletList, image } = Astro.props.props;
+const { title, hook, bulletList, image, cta } = Astro.props.props;
+
+const {style} = Astro.props;
 
 ---
+{style === undefined && (
 
-<div class="py-12 lg:py-0 lg:min-h-[960px] grid md:grid-cols-2 lg:place-items-center gap-20">
+<div class="py-12 lg:py-0 lg:min-h-[80vh] lg:items-center grid md:grid-cols-2 md:gap-8 xl:gap-20">
   <div class="hidden py-6 md:order-1 md:block ">
     <Image
       src={image.src}
@@ -33,8 +36,61 @@ const { title, hook, bulletList, image } = Astro.props.props;
             <li>{item}</li>
           ))}
         </ul>
-
-      <Buttonlist />
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <Link
+            href={cta[0]?.link}
+            rel="noopener">{cta[0]?.text || "Get Started"}</Link
+          >
+          <Link
+            size="lg"
+            style="outline"
+            rel="noopener"
+            href={cta[1]?.link}
+            target="_blank">{cta[1]?.text}</Link
+          >
+        </div>
+      <!-- <Buttonlist props={cta} /> -->
     </div>
   </div>
 </div>
+)}
+
+{style === "full-width" && (
+
+<div class="relative flex flex-col justify-center bg-black bg-opacity-60 px-8 md:px-12 py-12 lg:py-24 md:min-h-[70vh]">
+  <div class="absolute -z-10 inset-0 bg-[url('/src/assets/hero-gym.png')]"></div>
+
+  <div class="text-slate-50 mx-auto max-w-2xl">
+    <h1 class="text-4xl text-slate-50  sm:text-4xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-black to-black">
+      {title}
+    </h1>
+    <p class="text-xs border-2  rounded-sm inline-block p-1 font-semibold tracking-wide uppercase mt-4 max-w-xl outline-none ">
+      Ebullient is a starter template by Greyscale88</p>
+    <div class="ml-1">
+        <p class="mt-2 max-w-xl pt-4 pb-2">{hook}</p>
+        <!-- <p class="text-sm mt-4 tracking-wide">
+          Built on blazingly fast and modern architecture with a score of 90+ Google Lighthouse and great out-of-the-box SEO.
+        </p> -->
+        <ul class="flex flex-col text-md mt-2 marker:text-slate-700-500 list-disc list-inside">
+          {bulletList.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <Link
+            href={cta[0].link}
+            rel="noopener">{cta[0].text || "Get Started"}</Link
+          >
+          <Link
+            size="lg"
+            style="outline"
+            rel="noopener"
+            href={cta[1].link}
+            target="_blank">{cta[1].text}</Link
+          >
+        </div>
+      <!-- <Buttonlist props={cta} /> -->
+    </div>
+  </div>
+</div>
+)}

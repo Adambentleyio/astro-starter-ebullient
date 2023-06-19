@@ -1,11 +1,15 @@
 ---
 import Link from "./ui/link.astro";
+const {props} = Astro.props
+console.log(props)
+
+
 ---
 
 <div class="mt-6 flex flex-col sm:flex-row gap-3">
     <Link
       href="/contact"
-      rel="noopener">Get Started</Link
+      rel="noopener">{props?.text || "Get Started"}</Link
     >
     <Link
       size="lg"

@@ -1,45 +1,32 @@
 ---
 import Container from "@components/container.astro";
+import Hero from "@components/hero.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
-import Footer from "@components/footer.astro";
-import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Content from "@components/content.astro";
-import Layout from "@layouts/Layout.astro";
+import TestimonialGrid from "@components/testimonialgrid.astro";
 import Aboutpersonfeature from "@components/aboutpersonfeature.astro";
+import Layout from "@layouts/Layout.astro";
+
+// Assets
+import heroGym from "@assets/hero-gym.png"
 import heroAlt from "@assets/hero-alt.png"
 import heroImage from "@assets/hero-yoga.jpg";
 
-const personProfile = "https://source.unsplash.com/ZHvM3XIOHoE";
 
-const person =
-  {
-    name: "",
-    title: "",
-    avatar: {
-      src: heroImage,
-      width: 480,
-      fit: 'cover',
-      // height: 560,
-    },
-  }
 
-  const therapistsContent = {
+  const coachContent = {
     hero: {
-        title: "Attachment therapy for healthier relationships",
-        hook: "We help you build a secure attachment style to improve your relationships and mental health.",
-        bulletList: [
-            "Learn to communicate your needs",
-            "Build trust and intimacy",
-            "Feel more secure in your relationships",
-        ],
+        title: "Thrive at work. Make change happen. Elevate your career.",
+        hook: "Develop your leadership skills, increase productivity, and boost your confidence with executive coaching.",
+        bulletList: [],
         cta: [{
-            text: "Start a conversation",
+            text: "Start the growth machine",
             link: "/contact",
         },
         {
-            text: "Fees & availability",
+            text: "Availability",
             link: "/therapist",
         },],
         image: {
@@ -50,14 +37,14 @@ const person =
         },
     },
         features: {
-                title: "Talk therapy for healthier relationships",
-                hook: "We help you build a secure attachment style to improve your relationships and mental health.",
+                title: "Let’s change the way we do things around here…",
+                hook: "You know you want more from your life, yourself, and your work. But you keep getting stuck in the same patterns, you feel overwhelmed, and you don't know what the f*ck to do about it.",
                 cards: [
                     {
                         title: "Improved leadership skills",
                         description:
                         "Executive coaching can help individuals develop their leadership skills and navigate complex business challenges.",
-                        icon: "bx:bxs-file-find",
+                        icon: "mdi:home",
                     },
                     {
                         title: "Increased productivity",
@@ -92,12 +79,12 @@ const person =
                 ]
             },
             about: {
-                title: "Break through limits; understand thyself",
-                subtitle: "I'm here to support your journey",
+                title: "You want it? you got it.",
+                subtitle: "I'm here to support your journey. We work together to create manageable, sustainable, and real change that gets you to where you really want to be. ",
                 person:
                     {
-                        name: "Jane John Doe",
-                        title: "Attachment Therapist",
+                        name: "Natalia Kowalska",
+                        title: "Executive Coach",
                         avatar: {
                         src: heroImage,
                         width: 480,
@@ -108,7 +95,8 @@ const person =
                 },
                 cta: {
                     title: "Ready to get started?",
-                    subtitle: "We're here to help you reach your fitness goals. Currently taking clients from X location, providing 1-2-1s and group training classes. Get in touch today to schedule your first session.",
+                    subtitle: "Tired of awkward Zoom calls and repeating the same patterns?",
+                    paragraphs: ["Let's talk about how we can help you achieve your goals.", "Book a free 15-minute consultation today."],
                     button: {
                     text: "Get started",
                     url: "/contact",
@@ -116,19 +104,19 @@ const person =
                     style: "primary"
                 }
     }
-
 ---
 
 <Layout title="">
-  <Container>
-    <Hero props={therapistsContent.hero} />
+    <Hero style="full-width" props={coachContent.hero} />
+    <Container>
     <Features
-        title={therapistsContent.features.title}
-        hook={therapistsContent.features.hook}
-        cards={therapistsContent.features.cards}/>
+        title={coachContent.features.title}
+        hook={coachContent.features.hook}
+        cards={coachContent.features.cards}/>
     <Content />
     <Logos />
-    <Aboutpersonfeature team={person} props={therapistsContent.about} />
-    <Cta props={therapistsContent.cta} />
+    <Aboutpersonfeature props={coachContent.about} />
+    <TestimonialGrid />
+    <Cta props={coachContent.cta} />
   </Container>
 </Layout>

@@ -1,6 +1,6 @@
 ---
 import Link from "./ui/link.astro";
-const { title, subtitle, button, style}: {title: string; subtitle: string; button: Object; style: string} = Astro.props.props
+const { title, subtitle, button, paragraphs, style}: {title: string; subtitle: string; button: Object; paragraphs?: Array<string>; style: string} = Astro.props.props
 
 // style object based on value of style prop primary or secondary
 
@@ -11,6 +11,7 @@ const styleObj: Record<string, string> = {
 }
 
 const styleClasses : string = styleObj[style]
+
 let invert;
 if (style !== "outline") {
   invert = "text-white"
@@ -31,6 +32,12 @@ console.log(invert)
     <p class:list={["  text-lg mt-6 md:text-xl max-w-2xl", invert]}>
       {subtitle}
     </p>
+    {paragraphs ? paragraphs.map((p) => (
+      <p class:list={["  text-lg mt-6 md:text-xl max-w-2xl", invert]}>
+        {p}
+      </p>
+    )) : null
+  }
     <div class="flex mt-8">
       <Link href="#" style="muted" class="bg-white font-bold text-black">{button.text}</Link>
     </div>
@@ -49,9 +56,15 @@ console.log(invert)
   <div class="relative z-30 flex flex-col items-center p-6 bg-slate-50 bg-opacity-10 rounded-xl py-10 backdrop-blur-3xl ">
     <div class:list={["absolute inset-0 z-10 ", invert ]}></div>
     <h2 class:list={["font-semibold text-4xl md:text-5xl", invert]}>{title}</h2>
-    <p class:list={["  text-lg mt-6 md:text-xl max-w-2xl", invert]}>
+    <p class:list={["text-lg mt-6 md:text-xl max-w-2xl", invert]}>
       {subtitle}
     </p>
+    {paragraphs?.map((p) => (
+      <p class:list={["text-lg mt-2 md:text-xl max-w-2xl", invert]}>
+        {p}
+      </p>
+    ))
+  }
     <div class="flex mt-8">
       <Link href="#" style="muted" class="bg-white font-bold text-black">{button.text}</Link>
     </div>
