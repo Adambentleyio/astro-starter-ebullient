@@ -37,7 +37,9 @@ const {style} = Astro.props;
           ))}
         </ul>
         <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <Link
+          {cta.length && (
+
+            <Link
             href={cta[0].link}
             rel="noopener">{cta[0].text || "Get Started"}</Link
           >
@@ -48,8 +50,8 @@ const {style} = Astro.props;
             href={cta[1].link}
             target="_blank">{cta[1].text}</Link
           >
+          )}
         </div>
-      <!-- <Buttonlist props={cta} /> -->
     </div>
   </div>
 </div>

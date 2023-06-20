@@ -2,10 +2,13 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
+import NavEmpty from '@components/navbar/navbarempty.astro'
+
 import "@fontsource/inter/variable.css";
 
 export interface Props {
   title: string;
+  nav?: string
 }
 // const { src } = await getImage({
 //   src: "../../assets/hero.png",
@@ -15,7 +18,7 @@ export interface Props {
 // });
 // console.log(src);
 const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.url).toString();
-const { title } = Astro.props;
+const { title, nav } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -26,7 +29,8 @@ const { title } = Astro.props;
     <link rel="icon"href="/favicon.png" />
     <!-- roboto font google -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Parisienne&family=Lodrina+Outline&family=Poppins:wght@200&display=swap" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Spectral:wght@200;300&display=swap" rel="stylesheet">
 
     <meta name="generator" content={Astro.generator} />
@@ -53,7 +57,7 @@ const { title } = Astro.props;
     />
   </head>
   <body>
-    <Navbar />
+    {nav === "empty" ? "" : <Navbar />}
       <slot />
     <Footer />
     <style is:global>
